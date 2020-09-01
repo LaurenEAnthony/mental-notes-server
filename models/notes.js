@@ -1,31 +1,59 @@
 module.exports = (sequelize, DataTypes) => {
-  const Notes = sequelize.define("notes", {
+  const Notes = sequelize.define("note", {
     owner: {
       type: DataTypes.INTEGER,
     },
     date: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
     },
     type: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     details: {
       type: DataTypes.STRING(2000),
-      allowNull: false,
+      allowNull: true,
     },
     thoughts: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    emotion: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    emotionTiming: {
+    emotion1: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+    },
+    timing1: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    intensity1: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    emotion2: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    timing2: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    intensity2: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    emotion3: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    timing3: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    intensity3: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
     skillType: {
       type: DataTypes.STRING,
@@ -41,7 +69,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     active: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      allowNull: true,
     },
   });
   return Notes;

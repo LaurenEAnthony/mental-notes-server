@@ -1,3 +1,5 @@
 heroku create lea-mental-notes-server
 
 heroku addons:create heroku-postgresql:hobby-dev --app lea-mental-notes-server
+
+https://lea-mental-notes-server.herokuapp.com/

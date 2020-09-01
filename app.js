@@ -5,7 +5,7 @@ let sequelize = require("./db");
 
 // CONTROLLERS
 let user = require("./controllers/user-controller");
-let notes = require("./controllers/note-controller");
+let note = require("./controllers/note-controller");
 
 sequelize.sync();
 // sequelize.sync({force: true})
@@ -18,7 +18,7 @@ app.use(require("./middleware/headers"));
 app.use("/user", user);
 // Protected
 app.use(require("./middleware/validate-session"));
-app.use("/notes", notes);
+app.use("/notes", note);
 
 app.listen(process.env.PORT, function () {
   console.log("App is listening on port 3000");
