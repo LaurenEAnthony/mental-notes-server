@@ -7,17 +7,18 @@ router.post("/create", function (req, res) {
   const noteCreate = {
     owner: req.user.id,
     date: req.body.note.date,
+    time: req.body.note.time,
     type: req.body.note.type,
     details: req.body.note.details,
     thoughts: req.body.note.thoughts,
     emotion1: req.body.note.emotion1,
-    timing1: req.body.note.timing1,
+    // timing1: req.body.note.timing1,
     intensity1: req.body.note.intensity1,
     emotion2: req.body.note.emotion2,
-    timing2: req.body.note.timing2,
+    // timing2: req.body.note.timing2,
     intensity2: req.body.note.intensity2,
     emotion3: req.body.note.emotion3,
-    timing3: req.body.note.timing3,
+    // timing3: req.body.note.timing3,
     intensity3: req.body.note.intensity3,
     skillType: req.body.note.skillType,
     skillDetail: req.body.note.skillDetail,
@@ -34,17 +35,18 @@ router.put("/update/:id", function (req, res) {
   const updateNote = {
     owner: req.user.id,
     date: req.body.note.date,
+    time: req.body.note.time,
     type: req.body.note.type,
     details: req.body.note.details,
     thoughts: req.body.note.thoughts,
     emotion1: req.body.note.emotion1,
-    timing1: req.body.note.timing1,
+    // timing1: req.body.note.timing1,
     intensity1: req.body.note.intensity1,
     emotion2: req.body.note.emotion2,
-    timing2: req.body.note.timing2,
+    // timing2: req.body.note.timing2,
     intensity2: req.body.note.intensity2,
     emotion3: req.body.note.emotion3,
-    timing3: req.body.note.timing3,
+    // timing3: req.body.note.timing3,
     intensity3: req.body.note.intensity3,
     skillType: req.body.note.skillType,
     skillDetail: req.body.note.skillDetail,
@@ -71,8 +73,9 @@ router.delete("/delete/:id", function (req, res) {
 // Display Active Only
 router.get("/display/default", function (req, res) {
   // let active = req.notes.active;
+  let userid = req.user.id;
   Notes.findAll({
-    where: { active: true },
+    where: { active: true, owner: userid },
   })
     .then((notes) => res.status(200).json(notes))
     .catch((err) => res.status(500).json({ error: err }));

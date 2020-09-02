@@ -4,7 +4,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
     },
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
+      allowNull: true,
+    },
+    time: {
+      type: DataTypes.TIME,
       allowNull: true,
     },
     type: {
@@ -23,10 +27,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    timing1: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    // timing1: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
     intensity1: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -35,10 +39,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    timing2: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    // timing2: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
     intensity2: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -47,10 +51,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    timing3: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    // timing3: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
     intensity3: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -64,7 +68,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     skillHelpful: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BOOLEAN,
       allowNull: true,
     },
     active: {
