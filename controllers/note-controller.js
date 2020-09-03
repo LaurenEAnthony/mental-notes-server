@@ -69,7 +69,7 @@ router.get("/display/default", function (req, res) {
   // let active = req.notes.active;
   let userid = req.user.id;
   Notes.findAll({
-    where: { active: true, owner: userid },
+    where: { owner: userid },
   })
     .then((notes) => res.status(200).json(notes))
     .catch((err) => res.status(500).json({ error: err }));
